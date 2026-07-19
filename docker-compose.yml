@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16
+    container_name: rbac-postgres
+    environment:
+      POSTGRES_DB: rbacdb
+      POSTGRES_USER: rbacuser
+      POSTGRES_PASSWORD: rbacpass
+    ports:
+      - "5435:5432"
+    volumes:
+      - rbac_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  rbac_postgres_data:

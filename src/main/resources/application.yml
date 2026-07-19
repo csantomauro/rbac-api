@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5435/rbacdb
+    username: rbacuser
+    password: rbacpass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: "change-this-to-a-long-random-string-at-least-32-characters-please"
+  expiration: 86400000
