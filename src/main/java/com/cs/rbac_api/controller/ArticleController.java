@@ -37,7 +37,7 @@ public class ArticleController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAnyRole('EDITOR', 'ADMIN')")
-    public ResponseEntity<ArticleResponseDto> updatArticle(
+    public ResponseEntity<ArticleResponseDto> updateArticle(
             @PathVariable Long id,
             @Valid @RequestBody CreateArticleRequestDto request,
             Authentication authentication) {
