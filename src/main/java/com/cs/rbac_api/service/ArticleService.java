@@ -32,7 +32,7 @@ public class ArticleService {
     }
 
     public List<ArticleResponseDto> getAllArticles() {
-        return articleRepository.findAll().stream().map(this::toResponseDto).toList();
+        return articleRepository.findAllWithAuthor().stream().map(this::toResponseDto).toList();
     }
 
     public ArticleResponseDto updateArticle(Long id, CreateArticleRequestDto request, Authentication authentication) {
