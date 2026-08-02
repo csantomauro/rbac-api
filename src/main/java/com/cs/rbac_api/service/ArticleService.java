@@ -40,6 +40,7 @@ public class ArticleService {
                 .orElseThrow(() -> new ArticleNotFoundException("Article not found: " + id));
 
         User currentUser = (User) authentication.getPrincipal();
+        assert currentUser != null;
         boolean isAdmin = currentUser.getRole().name().equals("ADMIN");
         boolean isAuthor = article.getAuthor().getId().equals(currentUser.getId());
 
